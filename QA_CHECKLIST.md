@@ -3,6 +3,8 @@
 Manual verification checklist before releasing a build. Test on at least Paper (primary target); spot-check Spigot and Folia where noted.
 
 > Items below are checked off where verified either by running the build or by a full source-level audit (file:line evidence for every claim). Items still needing a live server + client are marked **(live)**. Known bugs found during the audit are called out inline — fix before shipping 1.0.0.
+>
+> This document is the code-level audit trail. If you're a human tester with an actual server and client rather than a code reviewer, use [LIVE_TESTING.md](LIVE_TESTING.md) instead — same coverage, written as plain click-through steps with no code references.
 
 ## Startup / Shutdown
 
