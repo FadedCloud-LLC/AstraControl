@@ -87,7 +87,7 @@ AstraControl detects Folia at startup and switches to a Folia-safe scheduler (re
 - [INTEGRATIONS.md](INTEGRATIONS.md)
 - [LOCALIZATION.md](LOCALIZATION.md)
 - [QA_CHECKLIST.md](QA_CHECKLIST.md)
-- [LIVE_TESTING.md](LIVE_TESTING.md) - plain step-by-step checklist for testing on a real server, no code knowledge needed
+- [LIVE_TESTING.md](LIVE_TESTING.md)
 - [CHANGELOG.md](CHANGELOG.md)
 
 ## License / Support
