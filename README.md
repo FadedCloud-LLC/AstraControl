@@ -27,7 +27,14 @@ AstraControl works completely standalone - every integration below is optional.
 
 ## Supported Minecraft Versions
 
-1.18.2 and newer. AstraControl targets the modern Paper API (compiled against 1.20.4) but degrades gracefully on older/Spigot-only servers - features that depend on newer API (per-player ping, client brand, MSPT) simply report as "unavailable" rather than crashing.
+1.18.2 and newer, including the `26.x`+ versions under Mojang's 2026 year-based
+versioning scheme (`26.1`, `26.2`, ...). AstraControl targets the modern Paper API
+(compiled against 1.20.4) but degrades gracefully on older/Spigot-only servers -
+features that depend on newer API (per-player ping, client brand, MSPT) simply report
+as "unavailable" rather than crashing. All of AstraControl's Bukkit/Paper API
+dependencies are `provided` scope (nothing is bundled), and AstraControl never touches
+NMS/CraftBukkit internals - only public Bukkit/Paper API, so it isn't affected by
+Paper 26.1+ dropping Spigot-mapped internal remapping.
 
 ## Commands
 
