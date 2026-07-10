@@ -1,0 +1,157 @@
+name: ${project.name}
+version: ${project.version}
+main: dev.aponder.astracontrol.AstraControlPlugin
+api-version: '1.18'
+author: APonder
+description: ${project.description}
+website: https://aponder.dev
+
+folia-supported: true
+
+softdepend:
+  - PlaceholderAPI
+  - LuckPerms
+  - Vault
+  - ProtocolLib
+  - WorldGuard
+  - Citizens
+  - ItemsAdder
+  - Oraxen
+  - Nexo
+  - HeadDatabase
+  - PlayerPoints
+  - ViaVersion
+  - TAB
+  - Essentials
+
+commands:
+  astractrl:
+    description: Main AstraControl command.
+    aliases: [acontrol, ac]
+    usage: /<command> help
+
+permissions:
+  astracontrol.*:
+    description: Grants every AstraControl permission.
+    children:
+      astracontrol.admin: true
+      astracontrol.admin.*: true
+
+  astracontrol.admin.*:
+    description: Grants every AstraControl admin permission.
+    children:
+      astracontrol.admin: true
+      astracontrol.use: true
+      astracontrol.reload: true
+      astracontrol.gui: true
+      astracontrol.status: true
+      astracontrol.health: true
+      astracontrol.plugins: true
+      astracontrol.hooks: true
+      astracontrol.errors: true
+      astracontrol.errors.clear: true
+      astracontrol.errors.export: true
+      astracontrol.maintenance: true
+      astracontrol.broadcast: true
+      astracontrol.papi: true
+      astracontrol.debug: true
+      astracontrol.debug.player: true
+      astracontrol.debug.permission: true
+      astracontrol.debug.command: true
+      astracontrol.player: true
+      astracontrol.stafftools: true
+      astracontrol.bypass.maintenance: true
+      astracontrol.notify.errors: true
+      astracontrol.notify.health: true
+
+  astracontrol.admin:
+    description: Marks a player as an AstraControl administrator.
+    default: op
+
+  astracontrol.use:
+    description: Allows basic use of AstraControl commands.
+    default: op
+
+  astracontrol.reload:
+    description: Allows reloading AstraControl's configuration.
+    default: op
+
+  astracontrol.gui:
+    description: Allows opening the AstraControl GUI.
+    default: op
+
+  astracontrol.status:
+    description: Allows viewing plugin status.
+    default: op
+
+  astracontrol.health:
+    description: Allows viewing server health diagnostics.
+    default: op
+
+  astracontrol.plugins:
+    description: Allows viewing installed plugin information.
+    default: op
+
+  astracontrol.hooks:
+    description: Allows viewing integration hook status.
+    default: op
+
+  astracontrol.errors:
+    description: Allows viewing captured errors/warnings.
+    default: op
+
+  astracontrol.errors.clear:
+    description: Allows clearing the error buffer.
+    default: op
+
+  astracontrol.errors.export:
+    description: Allows exporting the error buffer to file.
+    default: op
+
+  astracontrol.maintenance:
+    description: Allows managing maintenance mode.
+    default: op
+
+  astracontrol.broadcast:
+    description: Allows sending broadcasts, titles, and actionbars.
+    default: op
+
+  astracontrol.papi:
+    description: Allows using the PlaceholderAPI testing tools.
+    default: op
+
+  astracontrol.debug:
+    description: Allows access to debugging tools.
+    default: op
+
+  astracontrol.debug.player:
+    description: Allows debugging a player's overall state.
+    default: op
+
+  astracontrol.debug.permission:
+    description: Allows debugging a specific permission for a player.
+    default: op
+
+  astracontrol.debug.command:
+    description: Allows executing arbitrary commands as another player.
+    default: op
+
+  astracontrol.player:
+    description: Allows viewing player information.
+    default: op
+
+  astracontrol.stafftools:
+    description: Allows using staff tools on players.
+    default: op
+
+  astracontrol.bypass.maintenance:
+    description: Allows joining the server while maintenance mode is enabled.
+    default: op
+
+  astracontrol.notify.errors:
+    description: Allows receiving real-time error watcher notifications.
+    default: op
+
+  astracontrol.notify.health:
+    description: Allows receiving real-time health warning notifications.
+    default: op

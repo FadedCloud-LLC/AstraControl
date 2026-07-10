@@ -1,0 +1,74 @@
+# AstraControl configuration.
+# All user-facing text lives in language/en.yml, not here.
+
+debug: false
+
+language: en
+
+aliases:
+  - acontrol
+  - ac
+
+maintenance:
+  # Whether maintenance state should survive a server restart.
+  persist: true
+  enabled: false
+  reason: "The server is currently undergoing maintenance."
+  bypass-permission: astracontrol.bypass.maintenance
+  broadcast-on-toggle: true
+
+health:
+  update-interval-ticks: 100
+  warnings:
+    enabled: true
+    notify-permission: astracontrol.notify.health
+    tps-threshold: 18.0
+    mspt-threshold: 50.0
+    memory-usage-threshold-percent: 90.0
+
+error-watcher:
+  enabled: true
+  buffer-size: 200
+  capture-plugin-logs: true
+  notify-in-game: true
+  notify-permission: astracontrol.notify.errors
+
+broadcast:
+  chat-format: "<gray>[<gold>AstraControl</gold><gray>] <white>{message}"
+  title:
+    fade-in: 10
+    stay: 60
+    fade-out: 10
+  actionbar:
+    duration-ticks: 60
+  sound:
+    enabled: true
+    sound: "entity.experience_orb.pickup"
+    volume: 1.0
+    pitch: 1.0
+  bossbar:
+    enabled: true
+    duration-seconds: 10
+    color: YELLOW
+    overlay: PROGRESS
+
+placeholderapi:
+  enabled: true
+  cache-results: false
+
+permission-debugger:
+  prefer-luckperms: true
+  show-inherited-permissions: true
+
+player-tools:
+  allow-inventory-view: true
+  allow-teleport: true
+  # {player} is replaced with the target player's name. Leave blank to disable.
+  staff-command: ""
+
+metrics:
+  enabled: true
+
+update-checker:
+  enabled: false
+  notify-admins-on-join: false

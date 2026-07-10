@@ -1,0 +1,417 @@
+# AstraControl GUI layout. Every item is fully configurable: material, display-name,
+# lore, slot, custom-model-data, glow, amount, and (where applicable) action.
+# Display names and lore support MiniMessage.
+
+menus:
+
+  main:
+    title: "<dark_gray>Astra<gold>Control <dark_gray>» <gray>Control Center"
+    size: 45
+    filler:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+    items:
+      health:
+        material: RECOVERY_COMPASS
+        slot: 10
+        name: "<green>Server Health"
+        lore:
+          - "<gray>TPS, MSPT, memory, worlds"
+          - "<gray>and uptime at a glance."
+        action: OPEN_HEALTH
+      plugins:
+        material: BOOK
+        slot: 12
+        name: "<aqua>Plugins"
+        lore:
+          - "<gray>Browse every installed plugin."
+        action: OPEN_PLUGINS
+      hooks:
+        material: LODESTONE
+        slot: 14
+        name: "<light_purple>Hooks"
+        lore:
+          - "<gray>Status of optional integrations."
+        action: OPEN_HOOKS
+      players:
+        material: PLAYER_HEAD
+        slot: 16
+        name: "<yellow>Online Players"
+        lore:
+          - "<gray>Inspect and manage online players."
+        action: OPEN_PLAYERS
+      errors:
+        material: REDSTONE
+        slot: 28
+        name: "<red>Recent Errors"
+        lore:
+          - "<gray>Captured warnings and errors."
+        action: OPEN_ERRORS
+      maintenance:
+        material: BARRIER
+        slot: 30
+        name: "<gold>Maintenance Mode"
+        lore:
+          - "<gray>Toggle and configure maintenance."
+        action: OPEN_MAINTENANCE
+      placeholders:
+        material: PAPER
+        slot: 32
+        name: "<blue>Placeholder Tester"
+        lore:
+          - "<gray>Test PlaceholderAPI placeholders."
+        action: OPEN_PLACEHOLDERS
+      permissions:
+        material: NAME_TAG
+        slot: 34
+        name: "<dark_aqua>Permission Debugger"
+        lore:
+          - "<gray>Inspect a player's permissions."
+        action: OPEN_PERMISSIONS
+      broadcast:
+        material: BELL
+        slot: 38
+        name: "<yellow>Broadcast Center"
+        lore:
+          - "<gray>Send chat, title, or actionbar messages."
+        action: OPEN_BROADCAST
+      reload:
+        material: SUNFLOWER
+        slot: 40
+        name: "<green>Reload AstraControl"
+        lore:
+          - "<gray>Safely reload configs and hooks."
+        action: RELOAD_PLUGIN
+      close:
+        material: BARRIER
+        slot: 44
+        name: "<red>Close"
+        action: CLOSE_MENU
+
+  health:
+    title: "<dark_gray>Astra<gold>Control <dark_gray>» <gray>Server Health"
+    size: 45
+    filler:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+    back-slot: 40
+    items:
+      tps:
+        material: CLOCK
+        slot: 11
+        name: "<green>TPS"
+        glow: true
+        lore:
+          - "<gray>Current: <white>{value}"
+      mspt:
+        material: COMPARATOR
+        slot: 12
+        name: "<green>MSPT"
+        lore:
+          - "<gray>Average tick time: <white>{value}"
+      memory:
+        material: CHEST
+        slot: 13
+        name: "<yellow>Memory"
+        lore:
+          - "<gray>Used: <white>{used} <gray>/ <white>{max}"
+          - "<gray>Usage: <white>{percent}"
+      uptime:
+        material: SUNFLOWER
+        slot: 14
+        name: "<aqua>Uptime"
+        lore:
+          - "<gray>{value}"
+      players:
+        material: PLAYER_HEAD
+        slot: 15
+        name: "<gold>Online Players"
+        lore:
+          - "<gray>{value} online"
+      worlds:
+        material: GRASS_BLOCK
+        slot: 20
+        name: "<dark_green>Loaded Worlds"
+        lore:
+          - "<gray>{value} world(s) loaded"
+      chunks:
+        material: MAP
+        slot: 21
+        name: "<blue>Loaded Chunks"
+        lore:
+          - "<gray>{value} chunk(s) loaded"
+      entities:
+        material: ZOMBIE_HEAD
+        slot: 22
+        name: "<dark_red>Entities"
+        lore:
+          - "<gray>Entities: <white>{value}"
+          - "<gray>Tile entities: <white>{tile-entities}"
+      platform:
+        material: COMMAND_BLOCK
+        slot: 23
+        name: "<light_purple>Platform"
+        lore:
+          - "<gray>Running: <white>{value}"
+          - "<gray>Folia detected: <white>{folia}"
+      version:
+        material: WRITABLE_BOOK
+        slot: 24
+        name: "<gray>Server & Java Version"
+        lore:
+          - "<gray>Server: <white>{server}"
+          - "<gray>Java: <white>{java}"
+
+  plugin-list:
+    title: "<dark_gray>Astra<gold>Control <dark_gray>» <gray>Plugins"
+    size: 54
+    filler:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+    back-slot: 45
+    previous-page-slot: 48
+    next-page-slot: 50
+    content-slots-start: 0
+    content-slots-end: 44
+
+  plugin-detail:
+    title: "<dark_gray>Astra<gold>Control <dark_gray>» <gray>Plugin Details"
+    size: 36
+    filler:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+    back-slot: 31
+    items:
+      dependencies:
+        material: LEAD
+        slot: 11
+        name: "<yellow>Dependencies"
+      soft-dependencies:
+        material: STRING
+        slot: 13
+        name: "<gray>Soft Dependencies"
+      reload:
+        material: SUNFLOWER
+        slot: 15
+        name: "<green>Run Reload Command"
+        action: RUN_PLUGIN_RELOAD
+
+  hooks:
+    title: "<dark_gray>Astra<gold>Control <dark_gray>» <gray>Hooks"
+    size: 45
+    filler:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+    back-slot: 40
+    content-slots-start: 10
+    content-slots-end: 34
+
+  player-list:
+    title: "<dark_gray>Astra<gold>Control <dark_gray>» <gray>Online Players"
+    size: 54
+    filler:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+    back-slot: 45
+    previous-page-slot: 48
+    next-page-slot: 50
+    content-slots-start: 0
+    content-slots-end: 44
+
+  player-detail:
+    title: "<dark_gray>Astra<gold>Control <dark_gray>» <gray>Player"
+    size: 45
+    filler:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+    back-slot: 40
+    items:
+      teleport-to:
+        material: ENDER_PEARL
+        slot: 11
+        name: "<green>Teleport to Player"
+        action: TELEPORT_TO_PLAYER
+      teleport-here:
+        material: ENDER_EYE
+        slot: 12
+        name: "<green>Bring Player to Me"
+        action: TELEPORT_PLAYER_HERE
+      inventory:
+        material: CHEST
+        slot: 13
+        name: "<yellow>View Inventory"
+        action: VIEW_INVENTORY
+      message:
+        material: PAPER
+        slot: 14
+        name: "<aqua>Send Message"
+        action: SEND_MESSAGE
+      staff-command:
+        material: COMMAND_BLOCK
+        slot: 15
+        name: "<light_purple>Run Staff Command"
+        action: RUN_STAFF_COMMAND
+      permissions:
+        material: NAME_TAG
+        slot: 20
+        name: "<dark_aqua>Permission Debug"
+        action: OPEN_PERMISSION_DEBUG
+      placeholders:
+        material: BOOK
+        slot: 21
+        name: "<blue>Placeholder Preview"
+        action: OPEN_PLACEHOLDER_PREVIEW
+
+  errors:
+    title: "<dark_gray>Astra<gold>Control <dark_gray>» <gray>Recent Errors"
+    size: 54
+    filler:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+    back-slot: 45
+    previous-page-slot: 48
+    next-page-slot: 50
+    content-slots-start: 0
+    content-slots-end: 44
+    clear-slot: 46
+    export-slot: 47
+
+  maintenance:
+    title: "<dark_gray>Astra<gold>Control <dark_gray>» <gray>Maintenance"
+    size: 27
+    filler:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+    back-slot: 22
+    items:
+      toggle:
+        material: BARRIER
+        slot: 11
+        name: "<gold>Toggle Maintenance"
+        lore:
+          - "<gray>Currently: <white>{state}"
+        action: TOGGLE_MAINTENANCE
+      set-reason:
+        material: PAPER
+        slot: 13
+        name: "<yellow>Set Reason"
+        lore:
+          - "<gray>Reason: <white>{reason}"
+          - "<gray>Click, then type the new reason in chat."
+        action: SET_MAINTENANCE_REASON
+      broadcast:
+        material: BELL
+        slot: 15
+        name: "<aqua>Broadcast Status"
+        action: BROADCAST_MAINTENANCE_STATUS
+
+  placeholders:
+    title: "<dark_gray>Astra<gold>Control <dark_gray>» <gray>Placeholder Tester"
+    size: 27
+    filler:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+    back-slot: 22
+    items:
+      select-player:
+        material: PLAYER_HEAD
+        slot: 10
+        name: "<yellow>Select Player"
+        lore:
+          - "<gray>Selected: <white>{selected}"
+          - "<gray>Click, then type a player name in chat."
+        action: SELECT_PLACEHOLDER_PLAYER
+      enter-placeholder:
+        material: WRITABLE_BOOK
+        slot: 12
+        name: "<aqua>Enter Placeholder"
+        lore:
+          - "<gray>Click, then type a placeholder"
+          - "<gray>such as <white>%player_name%"
+        action: ENTER_PLACEHOLDER
+      view-raw:
+        material: PAPER
+        slot: 14
+        name: "<gray>View Raw Output"
+        lore:
+          - "<white>{raw}"
+        action: VIEW_PLACEHOLDER_RAW
+      view-rendered:
+        material: WRITTEN_BOOK
+        slot: 16
+        name: "<green>View Rendered Output"
+        lore:
+          - "<gray>Plain: <white>{plain}"
+          - "<gray>MiniMessage: <white>{minimessage}"
+          - "<gray>Legacy: <white>{legacy}"
+        action: VIEW_PLACEHOLDER_RENDERED
+
+  permission-debug:
+    title: "<dark_gray>Astra<gold>Control <dark_gray>» <gray>Permission Debugger"
+    size: 27
+    filler:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+    back-slot: 22
+    items:
+      select-player:
+        material: PLAYER_HEAD
+        slot: 10
+        name: "<yellow>Select Player"
+        lore:
+          - "<gray>Selected: <white>{selected}"
+          - "<gray>Click, then type a player name in chat."
+        action: SELECT_PERMISSION_PLAYER
+      enter-permission:
+        material: NAME_TAG
+        slot: 12
+        name: "<aqua>Enter Permission Node"
+        lore:
+          - "<gray>Click, then type a permission node in chat."
+        action: ENTER_PERMISSION
+      view-result:
+        material: WRITTEN_BOOK
+        slot: 14
+        name: "<green>View Result"
+        lore:
+          - "<gray>Permission: <white>{permission}"
+          - "<gray>Result: <white>{result}"
+          - "<gray>Source: <white>{source}"
+          - "<gray>Resolver: <white>{resolver}"
+        action: VIEW_PERMISSION_RESULT
+      view-groups:
+        material: BOOKSHELF
+        slot: 16
+        name: "<light_purple>View Groups"
+        lore:
+          - "<white>{groups}"
+        action: VIEW_PERMISSION_GROUPS
+
+  broadcast:
+    title: "<dark_gray>Astra<gold>Control <dark_gray>» <gray>Broadcast Center"
+    size: 27
+    filler:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+    back-slot: 22
+    items:
+      chat:
+        material: PAPER
+        slot: 10
+        name: "<white>Chat Broadcast"
+        action: BROADCAST_CHAT
+      title:
+        material: OAK_SIGN
+        slot: 12
+        name: "<yellow>Title Broadcast"
+        action: BROADCAST_TITLE
+      actionbar:
+        material: ANVIL
+        slot: 14
+        name: "<aqua>Actionbar Broadcast"
+        action: BROADCAST_ACTIONBAR
+      bossbar:
+        material: DRAGON_HEAD
+        slot: 16
+        name: "<light_purple>Bossbar Broadcast"
+        action: BROADCAST_BOSSBAR

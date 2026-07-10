@@ -1,0 +1,107 @@
+# Controls which integrations AstraControl checks for and how they are displayed.
+# Disabling a hook here simply stops AstraControl from checking/showing it - it never
+# unloads or reloads another plugin automatically.
+#
+# The entries below (placeholderapi, luckperms, vault, ...) have dedicated detection
+# code in AstraControl. You can also watch ANY other installed plugin by adding your
+# own entry here with any id you like - no AstraControl update required, e.g.:
+#
+# hooks:
+#   dynmap:
+#     enabled: true
+#     display-name: "Dynmap"
+#     plugin-name: "dynmap"        # must match the plugin's exact name from plugin.yml
+#     notes: "Watched via hooks.yml - not a built-in integration."
+#
+# Generic entries like this only get presence/enabled/version detection (the same as
+# every hook below); they won't get integration-specific checks or behavior.
+
+settings:
+  # If true, missing optional hooks are also logged to console on startup when debug
+  # is enabled. Missing hooks are always visible in the GUI regardless of this.
+  log-missing-hooks: false
+
+hooks:
+  placeholderapi:
+    enabled: true
+    display-name: "PlaceholderAPI"
+    plugin-name: "PlaceholderAPI"
+    notes: "Enables the placeholder tester and placeholder rendering in broadcasts."
+
+  luckperms:
+    enabled: true
+    display-name: "LuckPerms"
+    plugin-name: "LuckPerms"
+    notes: "Enables accurate permission source/group lookups in the permission debugger."
+
+  vault:
+    enabled: true
+    display-name: "Vault"
+    plugin-name: "Vault"
+    notes: "Detected for economy/permission provider compatibility."
+
+  protocollib:
+    enabled: true
+    display-name: "ProtocolLib"
+    plugin-name: "ProtocolLib"
+    notes: "Detected for informational purposes only. AstraControl does not use packets."
+
+  worldguard:
+    enabled: true
+    display-name: "WorldGuard"
+    plugin-name: "WorldGuard"
+    notes: "Detected for informational purposes only."
+
+  citizens:
+    enabled: true
+    display-name: "Citizens"
+    plugin-name: "Citizens"
+    notes: "Detected for informational purposes only."
+
+  itemsadder:
+    enabled: true
+    display-name: "ItemsAdder"
+    plugin-name: "ItemsAdder"
+    notes: "Detected for informational purposes only."
+
+  oraxen:
+    enabled: true
+    display-name: "Oraxen"
+    plugin-name: "Oraxen"
+    notes: "Detected for informational purposes only."
+
+  nexo:
+    enabled: true
+    display-name: "Nexo"
+    plugin-name: "Nexo"
+    notes: "Detected for informational purposes only."
+
+  headdatabase:
+    enabled: true
+    display-name: "HeadDatabase"
+    plugin-name: "HeadDatabase"
+    notes: "Detected for informational purposes only."
+
+  playerpoints:
+    enabled: true
+    display-name: "PlayerPoints"
+    plugin-name: "PlayerPoints"
+    notes: "Detected for informational purposes only."
+
+  viaversion:
+    enabled: true
+    display-name: "ViaVersion"
+    plugin-name: "ViaVersion"
+    notes: "Detected for informational purposes only."
+
+  tab:
+    enabled: true
+    display-name: "TAB"
+    plugin-name: "TAB"
+    notes: "Detected for informational purposes only."
+
+  essentialsx:
+    enabled: true
+    display-name: "EssentialsX"
+    plugin-name: "Essentials"
+    notes: "Detected for informational purposes only. AstraControl is not an EssentialsX replacement."

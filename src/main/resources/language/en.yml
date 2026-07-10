@@ -1,0 +1,49 @@
+# AstraControl English (en) language file.
+# All values support MiniMessage formatting: https://docs.advntr.dev/minimessage/format.html
+# Placeholders are written as {token} and are inserted as plain text (never parsed as
+# MiniMessage), so they are always safe even when they contain player-supplied text.
+
+prefix: "<gray>[<gold>AstraControl</gold><gray>]</gray> "
+
+no-permission: "<red>You do not have permission to do that."
+player-only: "<red>This command can only be used by a player."
+invalid-usage: "<red>Invalid usage. <gray>{usage}"
+unknown-command: "<red>Unknown subcommand. <gray>Use /astractrl help."
+command-error: "<red>An internal error occurred while running that command."
+player-not-found: "<red>No online player named <white>{player}</white> was found."
+plugin-not-found: "<red>No plugin named <white>{plugin}</white> was found."
+command-on-cooldown: "<red>Please wait <white>{seconds}s</white> before using this again."
+
+reload-started: "<yellow>Reloading AstraControl..."
+reload-success: "<green>AstraControl reloaded successfully in {time}ms."
+reload-failed: "<red>AstraControl failed to reload: {error}"
+
+placeholder-missing: "<red>That placeholder produced no output."
+placeholderapi-missing: "<red>PlaceholderAPI is not installed. Placeholder testing is unavailable."
+
+maintenance-enabled: "<gold>Maintenance mode has been <green>enabled</green>."
+maintenance-disabled: "<gold>Maintenance mode has been <red>disabled</red>."
+maintenance-already-enabled: "<yellow>Maintenance mode is already enabled."
+maintenance-already-disabled: "<yellow>Maintenance mode is already disabled."
+maintenance-join-denied: "<red>The server is currently under maintenance.\n<gray>{reason}"
+maintenance-status: "<gray>Maintenance mode is currently <white>{state}</white>."
+
+broadcast-sent: "<green>Broadcast sent to {count} player(s)."
+
+errors-cleared: "<green>Cleared {count} recorded error(s)."
+errors-exported: "<green>Exported {count} error(s) to {file}."
+errors-empty: "<gray>No errors have been recorded."
+error-notification: "<red>[AstraControl] <gray>New error from <white>{source}</white>: {message}"
+
+health-warning-tps: "<red>[AstraControl] <gray>TPS dropped to <white>{tps}</white>."
+health-warning-mspt: "<red>[AstraControl] <gray>MSPT rose to <white>{mspt}</white>."
+health-warning-memory: "<red>[AstraControl] <gray>Memory usage reached <white>{percent}%</white>."
+
+gui-loading: "<gray>Loading..."
+gui-no-access-item: "<red>You do not have access to this."
+
+command-help-header: "<gold>--- AstraControl Help ---"
+command-help-entry: "<yellow>/{command} <gray>- {description}"
+
+debug-permission-result: "<gray>{player} {result} the permission <white>{permission}</white>."
+debug-player-header: "<gold>--- Debug: {player} ---"
